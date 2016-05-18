@@ -15,38 +15,6 @@ body{
 h1, h2, h3, h4, h5, h6{
 	font-weight: normal;
 }
-
-nav{
-	display:block;
-	position:fixed;
-	width: 300px;
-	height: 100%;
-	background-color: rgba(231, 162, 203, 0.9);
-}
-
-ul{
-	margin-top:150px;
-	list-style: none;
-	display:block
-}
-
-li{
-	width:100%;
-	height: 50px;
-	border-bottom: 1px solid #7A5804;
-	overflow:hidden;
-}
-
-p.menu{
-	position: relative;
-	padding:16px;
-	padding-right: 25px;
-	float: right;
-	color: white;
-	opacity: 1;
-	font-size:  1.2 em;
-}
-
 .pacifico{
 	font-family: 'Pacifico', cursive;
 }
@@ -55,6 +23,7 @@ p.menu{
 }
 
 .cover{
+	z-index: -1;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -68,14 +37,24 @@ p.menu{
 .second{
 	background-image: url(../Imagenes/sweets.jpg); 
 	top:100%;
-	height: 105%;
+	height: 100%;
 }
-.second h1, .second h3, .second h2{
+.second h1{
 	font-size: 2.5em;
-	margin: 1em !important;
+	margin-top: 1em !important;
+	padding-left: 15px;
+}
+.second h3, .second h2{
+	font-size: 2em;
+	margin-top: 1em !important;
 	padding-left: 15px;
 }
 
+.brand-logo{
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	-o-transition: .4s;
+}
 .title.center{
 	text-align: center;
 	height: 1em;
@@ -88,5 +67,9 @@ p.menu{
 	width: 278px;
 }
 .top-space{
-	margin-top: 60px;
+	margin-top: 90px;
+}
+
+.small{
+	font-size: 80% !important;
 }
