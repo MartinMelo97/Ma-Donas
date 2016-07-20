@@ -1,10 +1,188 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Ma'Donas | Pedidos</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+		<script type="text/javascript" src="js/Database.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
 
+	<style>
+		img{
+			max-width: 100%;
+		}
+		.parallax-container{
+			height: 600px;
+		}
+		.active{
+			color: #c2185b !important;
+		}
+		.top{
+			margin-top: 30px;
+		}
+		#metodo{
+			opacity: 0;
+			transition: .5s;
+		}
+		input:focus{
+			border-bottom: 1px solid #c2185b !important;
+			box-shadow: 0 1px 0 0 #c2185b !important;
+		}
+		[type="checkbox"]:checked+label:before{
+	    border-top: 2px solid transparent;
+	    border-left: 2px solid transparent;
+	    border-right: 2px solid #c2185b !important;
+	    border-bottom: 2px solid #c2185b !important;
+    }
+    [type="radio"].with-gap:checked+label:before{
+    	border: 2px solid #c2185b !important;
+    }
+    [type="radio"]:checked+label:after{
+    	border: 2px solid #c2185b !important;
+    	background-color: #c2185b !important; 
+    }
+	</style>
+	<script>
+		function mostrar(){
+			$("#Metodo").css({"opacity":1});
+			Materialize.showStaggeredList('#Metodo')
+		}
+	</script>
+</head>
 <body>
+
+	<div class="navbar-fixed">
+		<nav>
+	    <div class="nav-wrapper pink darken-2">
+	      <a href="index.html" class="brand-logo animated fadeIn delay-1 pacifico center" id="brand-logo-s">Ma'Donas</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="left hide-on-med-and-down">
+	      	<li><a href="administrador.html" class="waves-effect waves-dark">Administrador</a></li>
+	      </ul>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="unidad1.html">Unidad 1</a></li>
+	      	<li><a href="unidad2.html">Unidad 2</a></li>
+	        <li><a href="pedidos.html">Pedidos</a></li>
+	        <li><a href="ubicacion.html">Ubicación</a></li>
+	        <li><a href="conocenos.html">Conocenos</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="unidad1.html">Unidad 1</a></li>
+	      	<li><a href="unidad2.html">Unidad 2</a></li>
+	        <li><a href="pedidos.html">Pedidos</a></li>
+	        <li><a href="ubicacion.html">Ubicación</a></li>
+	        <li><a href="conocenos.html">Conocenos</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	</div>
+
+	<!--<div class="parallax-container">
+	  <div class="parallax"><img src="Imagenes/sweets.jpg" class="img"></div>
+	</div>-->
+	<div class="section white">
+	  <div class="row container">
+	    <h2 class="header center">Pedidos</h2>
+	    <p class="grey-text text-darken-3 lighten-3">Llena este formulario para realizar tu pedido.</p>
+
+			<div class="row top-space-2" style="height:800px;">
+				<form class="col s12" name="pedidos" method="post" id="pedidos" action="PHP/Hacerpedido.php">
+					<div class="row">
+						<div class="input-field col s6">
+							<i class="material-icons prefix">account_circle</i>
+							<input type="text" id="Nombre" name="Nombre" class="validate">
+							<label for="Nombre">Nombre</label>
+						</div>
+
+						<div class="input-field col s6">
+							<i class="material-icons prefix">phone</i>
+							<input type="number" id="Telefono" name="Telefono" class="validate">
+							<label for="Telefono">Teléfono</label>
+						</div>
+
+
+						<div class="input-field col s12">
+							<i class="material-icons prefix">explore</i>
+							<input type="text" id="Direccion" name="Direccion" class="validate">
+							<label for="Direccion">Dirección</label>
+						</div>
+						
+						<div class="row col s12 top-space-2">
+							<p>
+								<i class="material-icons">shoping_cart</i>
+								Tipo de Pedido
+							</p>
+
+							<div class="row col s12">
+								<div class="col s6 top">
+									<input type="checkbox" id="Individual" name="Individual" checked />
+		      				<label for="Invididual">Paquete tradicional - $9.00</label>
+								</div>
+								<div class="input-field col s6">
+									<i class="material-icons prefix">create</i>
+									<input type="number" id="CantidadIndividual" name="CantidadIndividual" class="validate">
+									<label for="CantidadIndividual">Cantidad</label>
+								</div>
+							</div>
+
+							<div class="row col s12">
+								<div class="col s6 top">
+									<input type="checkbox" id="Tres" name="Tres" value="Paquete grupal: "/>
+		      				<label for="Tres">Paquete de tres - $25.00</label>
+								</div>
+								<div class="input-field col s6">
+									<i class="material-icons prefix">create</i>
+									<input type="number" id="CantidadTres" name="CantidadTres" class="validate">
+									<label for="CantidadTres">Cantidad</label>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="input-field col s5">
+							<i class="material-icons prefix">monetization_on</i>
+							<input type="text" id="Total" name="Total" class="validate" readonly>
+							<label for="Total">Total</label>
+						</div>
+						
+						<input type="hidden" id="Pedido" name="Pedido"> 
+
+						<ul class="col offset-s1 s6" id="Metodo">
+							<li>
+					      <input  class="with-gap" name="Metodo" type="radio" id="tarjeta" value="Tarjeta" />
+					      <label for="tarjeta">Tarjeta de crédito/débito</label>
+					    </li>
+					    <li>
+					      <input class="with-gap" name="Metodo" type="radio" id="deposito" value="Deposito" />
+					      <label for="deposito">Depósito Bancario</label>
+					    </li>
+					    <li>
+					      <input class="with-gap" name="Metodo" type="radio" id="paypal" value="Paypal"/>
+					      <label for="paypal">Paypal</label>
+					    </li>
+						</div>
+
+						<div class="top-space-2">
+							<a href="#!" class="btn pink darken-2 waves-effect waves-light col offset-s1 s3" onClick="mostrar(), calcularTotal()">Calcular Total</a>
+							<a href="#!" class="btn pink darken-2 waves-effect waves-light col offset-s1 s3" onclick="document.forms['pedidos'].submit(); return false;">Hacer pedido</a>
+							<a href="#!" class="btn pink darken-2 waves-effect waves-light col offset-s1 s3" onClick="limpiarTodo()">Borrar todo</a>
+						</div>
+
+					</div>
+				</form>
+			</div>	
+
+	  </div>
+	</div>
+	<!--<div class="parallax-container">
+	  <div class="parallax"><img src="Imagenes/breakfast.jpg"></div>
+	</div>-->
+		
 </body>
 </html>

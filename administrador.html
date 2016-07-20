@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Ma'Donas | Administrador</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/Database.js"></script>
+</head>
+<body>
+	
+	<div class="navbar-fixed">
+		<nav>
+	    <div class="nav-wrapper pink darken-2">
+	      <a href="index.html" class="brand-logo animated fadeIn delay-1 pacifico center" id="brand-logo-s">Ma'Donas</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+	      <ul class="left hide-on-med-and-down">
+	      	<li><a href="administrador.html" class="waves-effect waves-dark">Administrador</a></li>
+	      </ul>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="unidad1.html">Unidad 1</a></li>
+	      	<li><a href="unidad2.html">Unidad 2</a></li>
+	        <li><a href="pedidos.html">Pedidos</a></li>
+	        <li><a href="ubicacion.html">Ubicación</a></li>
+	        <li><a href="conocenos.html">Conocenos</a></li>
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="unidad1.html">Unidad 1</a></li>
+	      	<li><a href="unidad2.html">Unidad 2</a></li>
+	        <li><a href="pedidos.html">Pedidos</a></li>
+	        <li><a href="ubicacion.html">Ubicación</a></li>
+	        <li><a href="conocenos.html">Conocenos</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+	</div>
+
+	<div class="section white">
+	  <div class="row container">
+	    <h2 class="slab top-space-2 gray-text text-darken-4 center">
+				Ingresa sesión de usuario
+			</h1>
+			<div class="row top-space-2" style="height:800px;">
+				<form class="col s12" name="login" id="login" >
+					<div class="row">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">account_circle</i>
+							<input type="text" id="User" name="User" class="validate">
+							<label for="User">Usuario</label>
+						</div>
+
+						<div class="input-field col s12">
+							<i class="material-icons prefix">security</i>
+							<input type="password" id="Pass" name="Pass" class="validate">
+							<label for="Pass">Contraseña</label>
+						</div>
+					</div>
+					<div class="row">
+					</div>
+					<div class="row">
+						<div class="top-space-2">
+							<a href="#!" class="btn pink darken-2 waves-effect waves-light col offset-s0 s12" onClick="Login()">Ingresar</a>
+						</div>
+					</div>
+				</form>
+			</div>	
+</body>
+</html>

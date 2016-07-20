@@ -7,9 +7,9 @@
 	font-family: 'Roboto', sans-serif;
 }
 body{
-	/*background-image: url(../Imagenes/fondo.jpg);*/
+	/*background-image: url(../Imagenes/fondo.jpg);
 	background-size:100% 100%;
-	background-repeat:no-repeat;
+	background-repeat:no-repeat;*/
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -20,13 +20,14 @@ h1, h2, h3, h4, h5, h6{
 }
 .slab{
 	font-family: 'Roboto Slab', serif !important;
+	font-weight: bold;
 }
 
 .cover{
 	z-index: -1;
 	position: absolute;
 	width: 100%;
-	height: 100%;
+	min-height: 100%;
 	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
@@ -34,11 +35,94 @@ h1, h2, h3, h4, h5, h6{
 .first{
 	background-image: url(../Imagenes/donuts.jpg); 
 }
+
 .second{
 	background-image: url(../Imagenes/sweets.jpg); 
 	top:100%;
 	height: 100%;
 }
+
+.third{
+	background-image: url(../Imagenes/breakfast.jpg); 
+	top: 200%;	
+	min-height: 100%;
+}
+
+.unit1{
+	background-image: url(../Imagenes/Donut3.jpg);
+}
+
+.unit2{
+	background-image: url(../Imagenes/cup.jpg);
+	top: 10%;
+}
+
+.pedidos{
+	background-image: url(../Imagenes/donut5.jpg);
+}
+
+.conocenos1{
+	background-image: url(../Imagenes/donut1.jpg);
+}
+
+.conocenos2{
+	background-image: url(../Imagenes/donut7.jpg); 
+	top:130%;
+	height: 200%;
+}
+
+.conocenos3{
+	background-image: url(../Imagenes/donut6.jpg); 
+	top: 250%;	
+	min-height: 100%;
+}
+.ubicacion{
+	background-image: url(../Imagenes/donut4.jpg);
+}
+
+.exitoso{
+	background-image: url(../Imagenes/coffee.jpg);
+}
+
+.administrador{
+	background-image: url(../Imagenes/donut2.jpg);
+}
+.madonasimage{
+	width: 50%;
+	height: 100px;
+	text-align: center;
+}
+
+ .googlemaps {
+        position: relative;
+        padding-bottom: 45%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+    .googlemaps iframe {
+        position: absolute;
+        top: 3%;
+        left: 2%;
+        width: 95% !important;
+        height: 95% !important;
+    }
+
+    .youtube {
+        position: relative;
+        padding-bottom: 45%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+        text-align: center;
+    }
+    .youtube iframe {
+        position: absolute;
+        top: %;
+        left: %;
+        right:8%;
+        width: 85% !important;
+        height: 85% !important;
+    }
 .second h1{
 	font-size: 2.5em;
 	margin-top: 1em !important;
@@ -47,7 +131,7 @@ h1, h2, h3, h4, h5, h6{
 .second h3, .second h2{
 	font-size: 2em;
 	margin-top: 1em !important;
-	padding-left: 15px;
+	padding-left: 15px; 
 }
 
 .brand-logo{
@@ -66,10 +150,52 @@ h1, h2, h3, h4, h5, h6{
 	margin: auto;
 	width: 278px;
 }
+
+.product-contain{
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 95%;
+	height: 70%;
+	margin: auto;
+}
+
 .top-space{
 	margin-top: 90px;
 }
 
+.top-space-2{
+	margin-top: 45px;
+}
+.padding-top{
+	padding-top: 90px;
+}
+
 .small{
 	font-size: 80% !important;
+}
+.bigger{
+	font-size: 120%;
+}
+
+.imgunid{
+	width: 50%;
+	height: 50%;
+}
+.slider{
+	position: absolute;
+	height: 40% !important;
+	top: 7%;
+}
+.slider img{
+	position: absolute;
+	height: 150% !important;
+}
+.indicator-item.active{
+	background-color: #c2185b !important;
+}
+.materialboxed{
+	z-index: 10000000 !important;
 }
